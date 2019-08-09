@@ -18,7 +18,7 @@
 <div class="dropdown-divider"></div>
 <div>
 <center>
-	<table class="table">
+	<table class="table table-bordered">
 	<thead class="thead-dark">
 		<tr>
 			<th>Id</th>
@@ -34,7 +34,7 @@
 				<th scope="row">${p.id }</td>
 				<td>${p.name }</td>
 				<td>
-					<img src="${p.photo }" class="img-fluid" alt="Responsive image">
+					<img src="${p.photo }" width="200" height="200">
 				</td>
 				<td>${p.price }</td>
 				<td align="center">
