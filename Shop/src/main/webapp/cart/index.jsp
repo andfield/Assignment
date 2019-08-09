@@ -25,6 +25,7 @@
 			<th>Quantity</th>
 			<th>Option</th>
 			<th>Sub Total</th>
+			
 		</tr>
 		</thead>
 		<c:set var="total" value="0"></c:set>
