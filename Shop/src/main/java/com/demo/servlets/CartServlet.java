@@ -39,15 +39,15 @@ public class CartServlet extends HttpServlet {
 	private void doGet_Remove(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
 		List<Item> cart = (List<Item>) session.getAttribute("cart");
-		int index = isExisting(request.getParameter("id"), cart);
+		int index = isExisting(Integer.parseInt(request.getParameter("id")), cart);
 		cart.remove(index);
 		session.setAttribute("cart", cart);
 		response.sendRedirect("cart");
 	}
 
-	private int isExisting(String id, List<Item> cart) {
+	private int isExisting(int id, List<Item> cart) {
 		for(int i = 0; i < cart.size(); i++) {
-			if(cart.get(i).getProduct().getId().contentEquals(id)) {
+			if(cart.get(i).getProduct().getId() == id) {
 				
 			}
 		}
@@ -59,13 +59,13 @@ public class CartServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("cart") == null) {
 			List<Item> cart = new ArrayList<Item>();
-			cart.add(new Item(DataAccess.findById(request.getParameter("id")), 1));
+			cart.add(new Item(DataAccess.findById(Integer.parseInt(request.getParameter("id"))), 1));
 			session.setAttribute("cart", cart);
 		} else {
 			List<Item> cart = (List<Item>) session.getAttribute("cart");
-			int index = isExisting(request.getParameter("id"), cart);
+			int index = isExisting(Integer.parseInt(request.getParameter("id")), cart);
 			if(index == -1) {
-				cart.add(new Item(DataAccess.findById(request.getParameter("id")), 1));
+				cart.add(new Item(DataAccess.findById(Integer.parseInt(request.getParameter("id"))), 1));
 				
 			}else {
 				int quantity = cart.get(index).getQuantity() + 1;

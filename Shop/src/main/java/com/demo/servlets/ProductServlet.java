@@ -2,6 +2,7 @@ package com.demo.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,12 +23,14 @@ public class ProductServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		DataAccess productModel = new DataAccess();
-		request.setAttribute("products", productModel.findAll());
-		request.getRequestDispatcher("product/index.jsp").forward(request, response);
-	}
+		request.setAttribute("product", productModel.findAll());
+		RequestDispatcher rd = request.getRequestDispatcher("product/index.jsp");
+		rd.forward(request, response);
+					}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }
