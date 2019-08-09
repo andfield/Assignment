@@ -25,7 +25,7 @@
 				</td>
 				<td>${p.price }</td>
 				<td align="center">
-					<a href="${pageContext.request.contextPath }/cart?&action=buy&id=${p.id}">Buy</a>
+					<a href="${pageContext.request.contextPath}/cart?&action=buy&id=${p.id}">Buy</a>
 				</td>
 			</tr>
 		</c:forEach>
