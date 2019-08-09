@@ -15,16 +15,16 @@
 			<th>Price</th>
 			<th>Buy</th>
 		</tr>
-		<c:forEach var="product" items="${products }">
+		<c:forEach var="p" items="${product}">
 			<tr>
-				<td>${product.id }</td>
-				<td>${product.name }</td>
+				<td>${p.id }</td>
+				<td>${p.name }</td>
 				<td>
-					<img src="${pageContext.request.contextPath }/assets/images/${product.photo }" width="120">
+					<img src="${p.photo }" width="120">
 				</td>
-				<td>${product.price }</td>
+				<td>${p.price }</td>
 				<td align="center">
-					<a href="${pageContext.request.contextPath }/cart?&action=buy&id=${product.id }">Buy</a>
+					<a href="${pageContext.request.contextPath }/cart?&action=buy&id=${p.id }">Buy</a>
 				</td>
 			</tr>
 		</c:forEach>

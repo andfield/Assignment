@@ -28,7 +28,7 @@
 				<td>${item.product.id }</td>
 				<td>${item.product.name }</td>
 				<td>
-					<img src="${pageContext.request.contextPath }/assets/images/${item.product.photo }" width="120">
+					<img src="${item.product.photo }" width="120">
 				</td>
 				<td>${item.product.price }</td>
 				<td>${item.quantity }</td>

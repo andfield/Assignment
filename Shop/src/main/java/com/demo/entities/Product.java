@@ -2,24 +2,27 @@ package com.demo.entities;
 
 public class Product {
 
-	private String id;
+	private int id;
 	private String name;
-	private double price;
+	private int price;
 	private String photo;
 	
 	public Product() {
 		
 	}
 	
-	public Product(String id, String name, String photo, double price) {
-		
+	public Product(int id, String name, String photo, int price) {
+		this.id = id;
+		this.name = name;
+		this.photo = photo;
+		this.price = price;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -35,7 +38,7 @@ public class Product {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
