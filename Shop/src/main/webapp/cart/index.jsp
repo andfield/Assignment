@@ -18,9 +18,9 @@
 	<table class="table table-bordered">
 		<thead class="thead-dark">
 		<tr>
-			<th>Id</th>
+			<th>I</th>
 			<th>Name</th>
-			<th>Photo</th>
+			<th>Pho</th>
 			<th>Price</th>
 			<th>Quantity</th>
 			<th>Option</th>
