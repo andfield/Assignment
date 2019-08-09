@@ -20,7 +20,7 @@
 		<tr>
 			<th>I</th>
 			<th>Name</th>
-			<th>Photo</th>
+			<th>Pho</th>
 			<th>Price</th>
 			<th>Quantity</th>
 			<th>Option</th>
