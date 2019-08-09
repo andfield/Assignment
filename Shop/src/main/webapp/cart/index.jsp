@@ -30,7 +30,7 @@
 				<td>
 					<img src="${item.product.photo }" width="120">
 				</td>
-				<td>${item.product.price }</td>
+				<td>${item.product.price}</td>
 				<td>${item.quantity }</td>
 				<td>${item.product.price * item.quantity }</td>
 			</tr>

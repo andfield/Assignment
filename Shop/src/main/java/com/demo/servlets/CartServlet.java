@@ -40,7 +40,12 @@ public class CartServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		List<Item> cart = (List<Item>) session.getAttribute("cart");
 		int index = isExisting(Integer.parseInt(request.getParameter("id")), cart);
-		cart.remove(index);
+		int quantity = cart.get(index).getQuantity();
+		if (quantity > 1) {
+			cart.get(index).setQuantity(quantity-1);
+		}
+		else
+			cart.remove(index);
 		session.setAttribute("cart", cart);
 		response.sendRedirect("cart");
 	}
@@ -48,7 +53,7 @@ public class CartServlet extends HttpServlet {
 	private int isExisting(int id, List<Item> cart) {
 		for(int i = 0; i < cart.size(); i++) {
 			if(cart.get(i).getProduct().getId() == id) {
-				
+				return i;
 			}
 		}
 		return -1;
