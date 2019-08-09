@@ -6,7 +6,8 @@
 <title>Product Page</title>
 </head>
 <body>
-
+<center><h1>Grand Exchange</h1></center>
+<center>
 	<table cellpadding="2" cellspacing="2" border="1">
 		<tr>
 			<th>Id</th>
@@ -24,11 +25,11 @@
 				</td>
 				<td>${p.price }</td>
 				<td align="center">
-					<a href="${pageContext.request.contextPath }/cart?&action=buy&id=${p.id }">Buy</a>
+					<a href="${pageContext.request.contextPath }/cart?&action=buy&id=${p.id}">Buy</a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
-
+</center>
 </body>
 </html>
